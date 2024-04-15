@@ -19,7 +19,7 @@ public class NameController {
 
     @Operation(summary = "method name")
     @GetMapping(path = "/getName")
-    public String name(@Parameter(description = "The user request param") @RequestParam(value = "nome", required = true) String nome) {
+    public String name(@Parameter(description = "User's name request paramater") @RequestParam(value = "nome", required = true) String nome) {
         return nome;
     }
 
@@ -33,7 +33,7 @@ public class NameController {
 
     @Operation(summary = "reverse name")
     @PostMapping(path = "/getReverseName")
-    public String reverseName(@Parameter(description = "reverse name param") @RequestParam(value = "name", required = true) String name) {
+    public String reverseName(@Parameter(description = "User's reverse name parameter") @RequestParam(value = "name", required = true) String name) {
         return new StringBuilder(name).reverse().toString();
     }
 }
